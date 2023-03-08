@@ -13,7 +13,7 @@ class Game:
                     self.new_game()
                     self.music()
                     
-
+        #tworzenie obiektu mapy i gracza
           def new_game(self):
                     self.map = Map(self)
                     self.player = Player(self)
@@ -44,6 +44,8 @@ class Game:
           def music(self):
                     pg.mixer.music.load('qutas.mp3')
                     pg.mixer.music.play(-1)
+
+#Uruchamianie gry
 
 if __name__ == '__main__':
           game = Game()
