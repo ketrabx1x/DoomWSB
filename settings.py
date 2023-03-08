@@ -1,5 +1,7 @@
 import math
 
+#Ustawienia
+
 RES = WIDTH, HEIGHT = 2000, 900
 FPS = 60
 
