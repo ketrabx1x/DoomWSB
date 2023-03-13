@@ -3,6 +3,8 @@ import math
 #Ustawienia
 
 RES = WIDTH, HEIGHT = 2000, 900
+HALF_WIDTH = WIDTH // 2
+HALF_HEIGHT = HEIGHT // 2
 FPS = 60
 
 PLAYER_POS = 1.5, 5
@@ -17,4 +19,6 @@ HALF_NUM_RAYS = NUM_RAYS // 2
 DELTA_ANGLE = FOV / NUM_RAYS
 MAX_DEPTH = 20
 
-# FILMIK MINUTA 9.40
+# Odległość ekranu od gracza
+SCREEN_DIST = HALF_WIDTH / math.tan(HALF_FOV)
+SCALE = WIDTH // NUM_RAYS

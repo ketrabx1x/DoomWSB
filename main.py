@@ -35,8 +35,8 @@ class Game:
           #rysowanie ekranu
           def draw(self):
                     self.screen.fill('black')
-                    self.map.draw()
-                    self.player.draw()
+                    #self.map.draw()
+                    #self.player.draw()
 
           #wychodzenie z gry
           def check_events(self):
