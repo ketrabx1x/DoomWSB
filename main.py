@@ -10,13 +10,15 @@ class Game:
           def __init__(self):
                     #inicjacja modułu pyGame
                     pg.init()
+                    #wyłączenie widoczności kursora
+                    pg.mouse.set_visible(False)
                     #utworzenie ekranu i ustawienie rozdzielczości
                     self.screen = pg.display.set_mode(RES)
                     #Utworzenie zegara (do utrzymywania konkretnej ilości kl/s)
                     self.clock = pg.time.Clock()
                     self.delta_time = 1
                     self.new_game()
-                    #self.music()
+                    self.music()
                     
         #tworzenie instancji mapy i gracza
           def new_game(self):
@@ -37,10 +39,10 @@ class Game:
 
           #rysowanie ekranu
           def draw(self):
-                    self.screen.fill('black')
-                    self.object_renderer.draw()
-                    #self.map.draw()
-                    #self.player.draw()
+                  #self.screen.fill('black')
+                  self.object_renderer.draw()
+                  #self.map.draw()
+                  #self.player.draw()
 
           #wychodzenie z gry
           def check_events(self):
@@ -56,7 +58,7 @@ class Game:
                               self.draw()
           #muzyka
           def music(self):
-                    pg.mixer.music.load('qutas.mp3')
+                    pg.mixer.music.load('thunderstruck.mp3')
                     pg.mixer.music.play(-1)
 
 #Uruchamianie gry
