@@ -60,6 +60,7 @@ class Game:
           def music(self):
                     pg.mixer.music.load('thunderstruck.mp3')
                     pg.mixer.music.play(-1)
+                    pg.mixer.music.set_volume(0.5)
 
 #Uruchamianie gry
 
