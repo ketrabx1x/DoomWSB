@@ -58,7 +58,7 @@ class Game:
                               self.draw()
           #muzyka
           def music(self):
-                    pg.mixer.music.load('thunderstruck.mp3')
+                    pg.mixer.music.load('resources/sounds/thunderstruck.mp3')
                     pg.mixer.music.play(-1)
                     pg.mixer.music.set_volume(0.5)
 
