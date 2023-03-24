@@ -18,7 +18,7 @@ class Game:
                     self.clock = pg.time.Clock()
                     self.delta_time = 1
                     self.new_game()
-                    #self.music()
+                    self.music()
                     
         #tworzenie instancji mapy i gracza
           def new_game(self):
