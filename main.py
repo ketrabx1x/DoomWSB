@@ -6,6 +6,7 @@ from player import *
 from raycasting import *
 from object_renderer import *
 from sprite_object import *
+from object_handler import *
 
 class Game:
           def __init__(self):
@@ -27,13 +28,13 @@ class Game:
                     self.player = Player(self)
                     self.object_renderer = ObjectRenderer(self)
                     self.raycasting = RayCasting(self)
-                    self.static_sprite = SpriteObject(self)
+                    self.object_handler = ObjectHandler(self)
 
           #aktualizowanie ekranu
           def update(self):
                     self.player.update()
                     self.raycasting.update()
-                    self.static_sprite.update()
+                    self.object_handler.update()
                     pg.display.flip()
 
                     #wyświetlanie ilości kl/s
