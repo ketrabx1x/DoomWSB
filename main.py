@@ -7,6 +7,7 @@ from raycasting import *
 from object_renderer import *
 from sprite_object import *
 from object_handler import *
+from weapon import *
 
 class Game:
           def __init__(self):
@@ -29,12 +30,14 @@ class Game:
                     self.object_renderer = ObjectRenderer(self)
                     self.raycasting = RayCasting(self)
                     self.object_handler = ObjectHandler(self)
+                    self.weapon = Weapon(self)
 
           #aktualizowanie ekranu
           def update(self):
                     self.player.update()
                     self.raycasting.update()
                     self.object_handler.update()
+                    self.weapon.update()
                     pg.display.flip()
 
                     #wyświetlanie ilości kl/s
@@ -45,15 +48,18 @@ class Game:
           def draw(self):
                   #self.screen.fill('black')
                   self.object_renderer.draw()
+                  self.weapon.draw()
                   #self.map.draw()
                   #self.player.draw()
 
           #wychodzenie z gry
           def check_events(self):
-                    for event in pg.event.get():
-                              if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
-                                        pg.quit()
-                                        sys.exit()
+                for event in pg.event.get():
+                        if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+                                pg.quit()
+                                sys.exit()
+                        self.player.single_fire_event(event)
+                                
           #pętla w której działa gra
           def run(self):
                     while True:
