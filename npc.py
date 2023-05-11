@@ -52,6 +52,8 @@ class NPC(AnimatedSprite):
     def attack(self):
         if self.animation_trigger:
             self.game.sound.npc_shot.play()
+            if random() < self.accuracy:
+                self.game.player.get_damage(self.attack_damage)
 
     def animate_death(self):
         if not self.alive:
@@ -181,3 +183,9 @@ class NPC(AnimatedSprite):
         if self.ray_cast_player_npc():
             pg.draw.line(self.game.screen, 'orange', (100 * self.game.player.x, 100 * self.game.player.y),
                          (100 * self.x, 100 * self.y), 2)
+            
+
+class Alien(NPC):
+    def __init__(self, game, path="resources/sprites/npc/alien/0.png", pos=(4.5, 5.5),
+                  scale=1, shift=0.1, animation_time=180):
+        super().__init__(game, path, pos, scale, shift, animation_time)

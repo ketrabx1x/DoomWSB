@@ -23,6 +23,8 @@ class Map:
                     self.game = game
                     self.mini_map = mini_map
                     self.world_map = {}
+                    self.rows = len(self.mini_map)
+                    self.cols = len(self.mini_map[0])
                     self.get_map()
         
         #pozyskiwanie mapy poprzez zapisywanie koordynatów z cyferką 1 do słownika
